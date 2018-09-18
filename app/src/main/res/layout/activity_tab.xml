@@ -20,6 +20,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/container2"
+        android:background="#e16363"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </LinearLayout>
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/buttonNavigationview"

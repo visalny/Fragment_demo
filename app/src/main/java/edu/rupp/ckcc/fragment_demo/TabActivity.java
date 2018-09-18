@@ -1,10 +1,13 @@
 package edu.rupp.ckcc.fragment_demo;
 
+import android.content.res.Resources;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -36,22 +39,23 @@ public class TabActivity extends AppCompatActivity implements BottomNavigationVi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.home){
             HomeFragment homeFragment=new HomeFragment();
-            ChangeFragment(homeFragment);
+            ChangeFragment(R.id.container2,homeFragment);
         }
         else if(item.getItemId()==R.id.profile){
             ProfileFragment profileFragment=new ProfileFragment();
-            ChangeFragment(profileFragment);
+            ChangeFragment(R.id.container,profileFragment);
         }
         else {
             SettingFragment settingFragment=new SettingFragment();
-            ChangeFragment(settingFragment);
+            ChangeFragment(R.id.container,settingFragment);
         }
         return true;
     }
-    private void ChangeFragment(Fragment fragment){
+    private void ChangeFragment(@IdRes int containerid, Fragment fragment){
        FragmentManager  fragmentManager=getSupportFragmentManager();
         FragmentTransaction transaction=fragmentManager.beginTransaction();
-        transaction.replace(R.id.container,fragment);
+        transaction.replace(containerid,fragment);
         transaction.commit();
     }
+
 }
