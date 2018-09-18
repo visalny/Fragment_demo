@@ -8,8 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class HomeFragment extends Fragment{
+public class HomeFragment extends Fragment implements View.OnClickListener{
 
     @Nullable
     @Override
@@ -22,5 +23,11 @@ public class HomeFragment extends Fragment{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Button button=view.findViewById(R.id.btnclickme);
+        button.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(getActivity(), "Click me!", Toast.LENGTH_SHORT).show();
     }
 }

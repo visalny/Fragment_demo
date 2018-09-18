@@ -46,7 +46,7 @@ public class TabActivity extends AppCompatActivity implements BottomNavigationVi
             SettingFragment settingFragment=new SettingFragment();
             ChangeFragment(settingFragment);
         }
-        return false;
+        return true;
     }
     private void ChangeFragment(Fragment fragment){
        FragmentManager  fragmentManager=getSupportFragmentManager();
